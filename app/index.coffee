@@ -4,9 +4,11 @@ t7e.load enUs
 
 Navigable = require 'navigable'
 Home = require './controllers/home'
+Eligibility = require './controllers/eligibility'
 
 stack = Navigable.stack [
   {'Home': new Home}
+  {'Eligibility': new Eligibility}
 ]
 
 document.body.appendChild stack.el
