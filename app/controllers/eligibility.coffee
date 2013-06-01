@@ -1,18 +1,29 @@
 Page = require './page'
+template = require '../views/eligibility'
 
 class Eligibility extends Page
+  template: template
+
+  constructor: ->
+    super
+
+    @el.addEventListener 'change', @onChange
+
+  onChange: =>
+    console.log @isElligible()
+
   isElligible: ->
-    nowUnder31 = false
-    enteredUnder16 = false
-    continuousResident = false
-    unlawfulEntry = false
-    expiredStatus = false
-    present = false
-    inSchool = false
-    graduated = false
-    discharged = false
-    felon = false
-    threat = false
+    nowUnder31 = @el.querySelector('[name="nowUnder31"]').checked
+    enteredUnder16 = @el.querySelector('[name="enteredUnder16"]').checked
+    continuousResident = @el.querySelector('[name="continuousResident"]').checked
+    unlawfulEntry = @el.querySelector('[name="unlawfulEntry"]').checked
+    expiredStatus = @el.querySelector('[name="expiredStatus"]').checked
+    present = @el.querySelector('[name="present"]').checked
+    inSchool = @el.querySelector('[name="inSchool"]').checked
+    graduated = @el.querySelector('[name="graduated"]').checked
+    discharged = @el.querySelector('[name="discharged"]').checked
+    felon = @el.querySelector('[name="felon"]').checked
+    threat = @el.querySelector('[name="threat"]').checked
 
     return nowUnder31 \
       and enteredUnder16 \
