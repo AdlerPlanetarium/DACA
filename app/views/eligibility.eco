@@ -3,9 +3,10 @@
 <%- translate 'h1', 'eligibility.heading' %>
 
 <% rules = 'nowUnder31 enteredUnder16 continuousResident unlawfulEntry expiredStatus present inSchool graduated discharged felon threat'.split /\s+/ %>
+<% negatives = ['felon', 'threat'] %>
 
 <% for rule in rules: %>
-  <div class="eligibility-rule">
+  <div class="eligibility-rule <% if rule in negatives: %>negative<% end %>">
     <label>
       <input type="checkbox" name="<%= rule %>" />
       <%- translate 'span.description', "eligibility.#{rule}" %>
