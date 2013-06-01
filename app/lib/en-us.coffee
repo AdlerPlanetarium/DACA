@@ -60,3 +60,8 @@ module.exports =
     threat: '''
       Do you pose a threat to national security or public safety?
     '''
+    
+  map:
+    heading: '''
+      It's a map!
+    '''

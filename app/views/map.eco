@@ -1,1 +1,5 @@
-<h1>It's a map</h1>
+<% translate = require 't7e' %>
+
+<%- translate 'p', 'map.heading' %>
+
+<button type="button" id="map-find">Click me to find your location</button>
