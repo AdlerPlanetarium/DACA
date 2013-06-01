@@ -1,0 +1,10 @@
+{
+  "name": "DACA",
+  "version": "0.0.1",
+  "dependencies": {
+    "haw": "~0.0.7"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/haw serve"
+  }
+}
