@@ -15,8 +15,9 @@
 <% end %>
 
 <div class="eligible">
-  <p>Way to go!</p>
-  <p><a href="#/TODO">TODO</a></p>
+  <%- translate 'p', 'eligibility.eligible' %>
+  <%- translate 'p', 'eligibility.resourcesDescription' %>
+  <p><a href="#/resources"><%- translate 'span', 'eligibility.resourcesLink' %></a></p>
 </div>
 
 <div class="ineligible">

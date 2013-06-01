@@ -17,6 +17,12 @@ module.exports =
       Am I eligible?
     '''
 
+    eligible: 'Congratulations! You\'re eligible.'
+    resourcesDescription: 'Here are some resources to help you:'
+    resourcesLink: 'View resources'
+
+    ineligible: 'Sorry, you\'re not eligible at this time.'
+
     nowUnder31: '''
       Were you under 31 years of age as of June 15, 2012?
     '''
