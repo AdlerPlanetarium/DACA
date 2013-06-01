@@ -13,6 +13,10 @@ module.exports =
     '''
 
   eligibility:
+    heading: '''
+      Am I eligible?
+    '''
+
     nowUnder31: '''
       Were you under 31 years of age as of June 15, 2012?
     '''

@@ -1,5 +1,6 @@
 Page = require './page'
 template = require '../views/eligibility'
+FancyCheckbox = require './fancy-checkbox'
 
 class Eligibility extends Page
   template: template
@@ -7,7 +8,11 @@ class Eligibility extends Page
   constructor: ->
     super
 
-    @el.addEventListener 'change', @onChange
+    ruleBoxes = @el.querySelectorAll '.eligibility-rule'
+    for ruleBox in ruleBoxes
+      new FancyCheckbox el: ruleBox
+
+    @el.addEventListener 'change', @onChange, false
 
   onChange: =>
     console.log @isElligible()

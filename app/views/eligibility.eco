@@ -1,5 +1,7 @@
 <% translate = require 't7e' %>
 
+<%- translate 'h1', 'eligibility.heading' %>
+
 <% rules = 'nowUnder31 enteredUnder16 continuousResident unlawfulEntry expiredStatus present inSchool graduated discharged felon threat'.split /\s+/ %>
 
 <% for rule in rules: %>

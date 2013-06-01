@@ -4,7 +4,9 @@ class Page
   tag: 'div'
   template: null
 
-  constructor: ->
+  constructor: (params = {}) ->
+    @[property] = value for property, value of params
+
     @el ?= document.createElement @tag
     @el.className = @className
     @el.innerHTML = if typeof @template is 'function'
