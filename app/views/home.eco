@@ -1,0 +1,7 @@
+<% translate = require 't7e' %>
+
+<%- translate 'h1', 'home.heading' %>
+
+<%- translate 'p', 'home.content' %>
+
+<a href="#/TODO_NEXT_PAGE"><%- translate 'span', 'home.continue' %></a>
