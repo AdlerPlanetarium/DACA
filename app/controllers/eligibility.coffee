@@ -1,6 +1,7 @@
 Page = require './page'
 template = require '../views/eligibility'
 FancyCheckbox = require './fancy-checkbox'
+$ = window.jQuery
 
 class Eligibility extends Page
   template: template
@@ -13,11 +14,12 @@ class Eligibility extends Page
       new FancyCheckbox el: ruleBox
 
     @el.addEventListener 'change', @onChange, false
+    @checkEligible()
 
   onChange: =>
-    console.log @isElligible()
+    @checkEligible()
 
-  isElligible: ->
+  checkEligible: ->
     nowUnder31 = @el.querySelector('[name="nowUnder31"]').checked
     enteredUnder16 = @el.querySelector('[name="enteredUnder16"]').checked
     continuousResident = @el.querySelector('[name="continuousResident"]').checked
@@ -30,12 +32,16 @@ class Eligibility extends Page
     felon = @el.querySelector('[name="felon"]').checked
     threat = @el.querySelector('[name="threat"]').checked
 
-    return nowUnder31 \
+    eligible = nowUnder31 \
       and enteredUnder16 \
       and continuousResident \
       and (unlawfulEntry or expiredStatus) \
       and present \
       and (inSchool or graduated or discharged) \
       and not (felon or threat)
+
+    el = $(@el)
+    el.find('.eligible').toggle eligible
+    el.find('.ineligible').toggle not eligible
 
 module.exports = Eligibility

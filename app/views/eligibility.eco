@@ -13,3 +13,12 @@
     </label>
   </div>
 <% end %>
+
+<div class="eligible">
+  <p>Way to go!</p>
+  <p><a href="#/TODO">TODO</a></p>
+</div>
+
+<div class="ineligible">
+  Nope!
+</div>

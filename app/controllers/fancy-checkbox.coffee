@@ -7,8 +7,9 @@ class FancyCheckbox
   constructor: (params = {}) ->
     @[property] = value for property, value of params
 
-    $(@el).addClass @className
-    @el.addEventListener 'change', @onChange, false
+    el = $(@el)
+    el.addClass @className
+    el.on 'change', @onChange
 
   onChange: =>
     checked = @el.querySelector('input').checked
