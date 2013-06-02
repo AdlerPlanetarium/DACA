@@ -1,1 +1,21 @@
-<p>These are some resources</p>
+<header>
+  <h1>Immigration Resource Sites</h1>
+</header>
+
+<div class="content">
+  <h2>Get the files</h2>
+  <p>In order to download and fill out the forms necessary toget documents, you'll need a computer and a printer. If you don't have one you can use our maps to find one you can use.</p>
+  <div class="action">
+    <a href="#/map" class="next">Local computer facilities</a>
+  </div>
+</div>
+
+<div class="content">
+  <ul>
+    <li><a href="http://www.icirr.org/">Illinois Coalition for Immigrant and Refugee Rights</a></li>
+    <li><a href="http://www.immigrationequality.org/">Immigration Equality</a></li>
+    <li><a href="http://www.e4fc.org/">Education for Fair Consideration</a></li>
+    <li><a href="http://www.iwj.org/">Interfaith Worker Justice</a></li>
+    <li><a href="http://www.uscis.gov/childhoodarrivals">United States Immigration &amp; Custom Enforcement</a></li>
+  </ul>
+</div>

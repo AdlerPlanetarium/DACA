@@ -17,11 +17,17 @@
 <% end %>
 
 <div class="eligible">
-  <%- translate 'p', 'eligibility.eligible' %>
-  <%- translate 'p', 'eligibility.resourcesDescription' %>
-  <p><a href="#/resources"><%- translate 'span', 'eligibility.resourcesLink' %></a></p>
+  <div class="content">
+    <%- translate 'p', 'eligibility.eligible' %>
+    <%- translate 'p', 'eligibility.resourcesDescription' %>
+    <div class="action">
+      <a href="#/resources" class="next"><%- translate 'span', 'eligibility.resourcesLink' %></a></p>
+    </div>
+  </div>
 </div>
 
 <div class="ineligible">
-  <%- translate 'p', 'eligibility.ineligible' %>
+  <div class="content">
+    <%- translate 'p', 'eligibility.ineligible' %>
+  </div>
 </div>
