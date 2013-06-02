@@ -71,3 +71,6 @@ module.exports =
     heading: '''
       It's a map!
     '''
+    click_text: '''
+      Click me to find your location!
+    '''

@@ -2,4 +2,6 @@
 
 <%- translate 'p', 'map.heading' %>
 
-<button type="button" id="map-find">Click me to find your location</button>
+<button type="button" id="map-find"><%- translate 'span', 'map.click_text' %></button>
+
+<div id="map-canvas"></div>
