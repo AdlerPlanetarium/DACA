@@ -1,17 +1,19 @@
 .fancy-checkbox
-  background: gray
+  background: $header_gray
   border-top: 1px solid black
 
   label
     cursor: pointer
     display: block
+    font-size: 20px
+    padding: 40px
 
   input
     position: absolute
     visibility: hidden
 
   &.checked
-    background: green
+    background: $blue
 
     &.negative
-      background: red
+      background: $orange
