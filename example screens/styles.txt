@@ -1,0 +1,12 @@
+
+//// SOME APP STYLES ////
+
+Red:  #f3704f
+Blue: #98d7db
+Gray: #3a3a3a
+
+H1: 41px
+<p>:26px
+Button txt: 32px
+
+Button border-radius: 8px
