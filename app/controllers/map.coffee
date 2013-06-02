@@ -12,6 +12,7 @@ class Map extends Page
     
   plotSite: =>
     navigator.geolocation.getCurrentPosition @logLocation
+    $('#placeholder').hide()
 
   logLocation: (location) =>
     @setupMap location

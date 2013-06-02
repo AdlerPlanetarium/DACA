@@ -69,7 +69,7 @@ module.exports =
     
   map:
     heading: '''
-      It's a map!
+      Find a computer
     '''
     click_text: '''
       Click me to find your location!

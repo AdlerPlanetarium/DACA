@@ -1,15 +1,14 @@
 <% translate = require 't7e' %>
 
-<%- translate 'p', 'map.heading' %>
-
-<header>
+<header class="dialog">
   <%- translate 'h1', 'map.heading' %>
 </header>
 
 <div class='map'>
+  <div id='placeholder'>
+    
+  </div>
+  <button type="button" id="map-find"><%- translate 'span', 'map.click_text' %></button>
 
+  <div id="map-canvas"></div>
 </div>
-
-<button type="button" id="map-find"><%- translate 'span', 'map.click_text' %></button>
-
-<div id="map-canvas"></div>

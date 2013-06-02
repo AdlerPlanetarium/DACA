@@ -27,6 +27,15 @@ body
         h1
           font-size: 30px
           font-weight: lighter
+          
+        &.dialog
+          background: $header_gray
+          
+          h1
+            background: url('images/arrow.png') no-repeat 0px 3px
+            padding-left: 55px
+            font-size: 26px
+          
 
       .content
         padding: 10px 25px 50px
@@ -44,10 +53,16 @@ body
           text-decoration: none
           text-shadow: 0 1px 1px rgba(#000, 0.75)
 
-.map    
+
+.map
+  #placeholder
+    background: #efefef
+    width: 450px
+    height: 450px
+
   
 #map-canvas
-  height: 1136px
-  width: 640px
+  height: 450px
+  width: 450px
 
 @import "./fancy-checkbox"
