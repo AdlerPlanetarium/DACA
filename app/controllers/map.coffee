@@ -12,30 +12,69 @@ class Map extends Page
     
   plotSite: =>
     navigator.geolocation.getCurrentPosition @logLocation
-  
+
   logLocation: (location) =>
     @setupMap location
-    
+        
   setupMap: (location) =>
-    console.log location
+    # Set up Google Map
     mapOptions =
           center: new google.maps.LatLng(location.coords.latitude, location.coords.longitude),
           zoom: 14,
           mapTypeId: google.maps.MapTypeId.ROADMAP
-
+      
     mapCanvas = @el.querySelector '#map-canvas'
 
     map = new google.maps.Map mapCanvas, mapOptions
     
-    locationImage =
+    # Set up blue current location marker
+    myPositionImage =
       url: '//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png'
       size: new google.maps.Size(22, 22)
       origin: new google.maps.Point(0, 18)
       anchor: new google.maps.Point(11, 11)
     
+    # Put blue dot on current location
     marker = new google.maps.Marker
       position: new google.maps.LatLng(location.coords.latitude, location.coords.longitude)
-      icon: locationImage
+      icon: myPositionImage
       map: map
+          
+    # Get local library services locations within 3 miles
+    locationUrl = "https://data.cityofchicago.org/resource/bmus-hp7e.json?$where=within_circle(location,#{location.coords.latitude},#{location.coords.longitude},4826)&$callback=?"
+    
+    $.getJSON locationUrl, (data) =>
+      alert 'No locations' if data.length == 0
+      @plotSitePositions site, map for site in data
+      
+      # Redraw map to fit points
+      @mapRedraw data, map
+        
+  plotSitePositions: (site, map) =>
+    console.log site
+    marker = new google.maps.Marker
+      position: new google.maps.LatLng(site.location.latitude, site.location.longitude)
+      map: map
+      
+  mapRedraw: (data, map) =>
+    lats = []
+    lngs = []
+    
+    for site in data
+      lats.push site.location.latitude
+      lngs.push site.location.longitude
+    
+    minLat = Math.min.apply(Math, lats)
+    minLng = Math.min.apply(Math, lngs)
+    
+    maxLat = Math.max.apply(Math, lats)
+    maxLng = Math.max.apply(Math, lngs)
+    
+    southWest = new google.maps.LatLng(minLat, minLng)
+    northEast = new google.maps.LatLng(maxLat, maxLng)
+    
+    bounds = new google.maps.LatLngBounds(southWest, northEast)
+
+    map.fitBounds bounds
     
 module.exports = Map

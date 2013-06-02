@@ -74,3 +74,6 @@ module.exports =
     click_text: '''
       Click me to find your location!
     '''
+    find_locations: '''
+      Find locations near me
+    '''
