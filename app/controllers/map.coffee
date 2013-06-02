@@ -39,21 +39,29 @@ class Map extends Page
       position: new google.maps.LatLng(location.coords.latitude, location.coords.longitude)
       icon: myPositionImage
       map: map
+      
+    mySiteImage =
+      url: 'images/location_marker.svg'
+      size: null
+      origin: null
+      anchor: null
+      scaledSize: new google.maps.Size(17, 24)
           
-    # Get local library services locations within 3 miles
-    locationUrl = "https://data.cityofchicago.org/resource/bmus-hp7e.json?$where=within_circle(location,#{location.coords.latitude},#{location.coords.longitude},4826)&$callback=?"
+    # Get local library services locations within 2 miles
+    locationUrl = "https://data.cityofchicago.org/resource/bmus-hp7e.json?$where=within_circle(location,#{location.coords.latitude},#{location.coords.longitude},3217)&$callback=?"
     
     $.getJSON locationUrl, (data) =>
       alert 'No locations' if data.length == 0
-      @plotSitePositions site, map for site in data
+      @plotSitePositions site, map, mySiteImage for site in data
       
       # Redraw map to fit points
       @mapRedraw data, map
         
-  plotSitePositions: (site, map) =>
+  plotSitePositions: (site, map, marker) =>
     marker = new google.maps.Marker
       position: new google.maps.LatLng(site.location.latitude, site.location.longitude)
       map: map
+      icon: marker
       title: site.organization_name
       
   mapRedraw: (data, map) =>

@@ -2,6 +2,14 @@
 
 <%- translate 'p', 'map.heading' %>
 
+<header>
+  <%- translate 'h1', 'map.heading' %>
+</header>
+
+<div class='map'>
+
+</div>
+
 <button type="button" id="map-find"><%- translate 'span', 'map.click_text' %></button>
 
 <div id="map-canvas"></div>
