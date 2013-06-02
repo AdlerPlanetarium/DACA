@@ -51,10 +51,10 @@ class Map extends Page
       @mapRedraw data, map
         
   plotSitePositions: (site, map) =>
-    console.log site
     marker = new google.maps.Marker
       position: new google.maps.LatLng(site.location.latitude, site.location.longitude)
       map: map
+      title: site.organization_name
       
   mapRedraw: (data, map) =>
     lats = []
