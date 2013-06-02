@@ -1,7 +1,12 @@
 <% translate = require 't7e' %>
 
-<%- translate 'h1', 'home.heading' %>
+<header>
+  <%- translate 'h1', 'home.heading' %>
+</header>
 
-<%- translate 'p', 'home.content' %>
-
-<a href="#/TODO_NEXT_PAGE"><%- translate 'span', 'home.continue' %></a>
+<div class="content">
+  <%- translate 'p', 'home.content' %>
+  <div class="action">
+    <a href="#/eligibility" class="next"><%- translate 'span', 'home.continue' %></a>
+  </div>
+</div>
