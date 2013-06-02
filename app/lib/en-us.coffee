@@ -72,8 +72,8 @@ module.exports =
       Find a computer
     '''
     click_text: '''
-      Click me to find your location!
+      Search
     '''
-    find_locations: '''
-      Find locations near me
+    content: '''
+      Find computing facilities near me
     '''

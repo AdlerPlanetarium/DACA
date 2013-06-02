@@ -12,7 +12,6 @@ class Map extends Page
     
   plotSite: =>
     navigator.geolocation.getCurrentPosition @logLocation
-    $('#placeholder').hide()
 
   logLocation: (location) =>
     @setupMap location
@@ -23,8 +22,9 @@ class Map extends Page
           center: new google.maps.LatLng(location.coords.latitude, location.coords.longitude),
           zoom: 14,
           mapTypeId: google.maps.MapTypeId.ROADMAP
+          disableDefaultUI: true
       
-    mapCanvas = @el.querySelector '#map-canvas'
+    mapCanvas = @el.querySelector '#placeholder'
 
     map = new google.maps.Map mapCanvas, mapOptions
     

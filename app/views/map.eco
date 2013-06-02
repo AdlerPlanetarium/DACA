@@ -5,10 +5,11 @@
 </header>
 
 <div class='map'>
-  <div id='placeholder'>
-    
+  <div id='placeholder'></div>  
+  <div class="content">
+    <%- translate 'p', 'map.content' %>
+    <div class="action">
+      <button type="button" id="map-find" class="next"><%- translate 'span', 'map.click_text' %></button>
+    </div>
   </div>
-  <button type="button" id="map-find"><%- translate 'span', 'map.click_text' %></button>
-
-  <div id="map-canvas"></div>
 </div>
